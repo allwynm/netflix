@@ -1,0 +1,38 @@
+.poster {
+}
+
+.poster__title {
+  font-size: large;
+  font-weight: bold;
+}
+
+.poster__postbody {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 20px;
+}
+
+.poster__postbody::-webkit-scrollbar {
+  display: none;
+}
+
+.poster_image {
+  object-fit: contain;
+  width: 100%;
+  margin-left: 10px;
+  max-height: 100px;
+  transition: transform 450ms;
+}
+
+.poster_image:hover {
+  transform: scale(1.08);
+}
+
+.poster_largerimage {
+  max-height: 250px;
+}
+
+.poster_largerimage:hover {
+  transform: scale(1.1);
+}
