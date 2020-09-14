@@ -4,7 +4,7 @@ import API from './API';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
 
-const baseUrl = 'https://image.tmdb.org/t/p/original';
+const baseUrl = 'https://image.tmdb.org/t/p/original/';
 
 function Poster({ title, fetchUrl, isLargeRow }) {
   const [movies, setMovies] = useState([]);
@@ -27,7 +27,6 @@ function Poster({ title, fetchUrl, isLargeRow }) {
   };
 
   const handleClick = (movie) => {
-    console.log(movie);
     if (trailerUrl) {
       setTrailerUrl('');
     } else {
@@ -51,9 +50,12 @@ function Poster({ title, fetchUrl, isLargeRow }) {
             <img
               key={item.id}
               onClick={() => handleClick(item)}
-              src={`${baseUrl}${
-                isLargeRow ? item.poster_path : item.backdrop_path
-              }`}
+              src={
+                item &&
+                `${baseUrl}${
+                  isLargeRow ? item.poster_path : item.backdrop_path
+                }`
+              }
               alt={item.name}
               className={`poster_image ${isLargeRow && 'poster_largerimage'}`}
             />

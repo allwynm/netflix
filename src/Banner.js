@@ -21,14 +21,14 @@ function Banner() {
     return str?.length > n ? str.substring(0, n - 1) + '...' : str;
   };
 
-  console.log(movie);
   return (
     <header
       className='banner'
       style={{
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
-        backgroundImage: `url(${baseUrl}${movie.backdrop_path})`,
+        backgroundImage:
+          movie.backdrop_path && `url(${baseUrl}${movie.backdrop_path})`,
       }}
     >
       <div className='banner__body'>
